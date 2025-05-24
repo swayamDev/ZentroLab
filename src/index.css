@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Prosto+One&display=swap");
+@import "tailwindcss";
+
+:root {
+  font-family: "Prosto One", sans-serif;
+  scroll-behavior: smooth;
+}
+
+@theme {
+  --color-primary: #514ff2;
+  --color-secondary: #fda702;
+  --color-tertiary: #eeebfc;
+  --color-quaternary: #fff6e7;
+}
+
+@theme {
+  --animate-scroll: scroll 30s linear infinite;
+
+  @keyframes scroll {
+    0% {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(-50%);
+    }
+  }
+}
