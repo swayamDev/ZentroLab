@@ -7,10 +7,11 @@
 }
 
 @theme {
-  --color-primary: #514ff2;
-  --color-secondary: #fda702;
+  --color-primary: #155dfc;
+  --color-secondary: #ffc600;
   --color-tertiary: #eeebfc;
   --color-quaternary: #fff6e7;
+  --color-turmeric: #fda702;
 }
 
 @theme {

@@ -1,4 +1,8 @@
 import { useState } from "react";
+import formImg from "../assets/form.png";
+import { HiOutlineMail } from "react-icons/hi";
+import { IoCallOutline } from "react-icons/io5";
+import { FaRegClock } from "react-icons/fa";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -159,7 +163,7 @@ const Contact = () => {
                 className={`w-full py-3 px-6 rounded-lg font-semibold text-white transition-all duration-200 ${
                   isSubmitting
                     ? "bg-gray-400 cursor-not-allowed"
-                    : "bg-blue-600 hover:bg-blue-700 hover:shadow-lg transform hover:-translate-y-0.5"
+                    : "bg-primary hover:bg-blue-700 hover:shadow-lg transform hover:-translate-y-0.5"
                 }`}
               >
                 {isSubmitting ? (
@@ -205,33 +209,12 @@ const Contact = () => {
           {/* Contact Image/Info */}
           <div className="space-y-8">
             {/* Hero Image */}
-            <div className="relative overflow-hidden rounded-lg shadow-lg bg-gradient-to-br from-blue-50 to-blue-100">
-              <div className="aspect-w-16 aspect-h-12 p-8 md:p-12 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-24 h-24 mx-auto mb-6 bg-blue-600 rounded-full flex items-center justify-center">
-                    <svg
-                      className="w-12 h-12 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                    Ready to Start?
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Let's discuss your project and how we can help bring your
-                    vision to life. We're excited to hear about your ideas!
-                  </p>
-                </div>
-              </div>
+            <div className="relative overflow-hidden rounded-lg shadow-lg bg-blue-400">
+              <img
+                src={formImg}
+                alt="Team collaboration and discussion"
+                className="w-full h-64 md:h-80 object-cover"
+              />
             </div>
 
             {/* Contact Info */}
@@ -240,26 +223,14 @@ const Contact = () => {
               <div className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
                 <div className="flex-shrink-0">
                   <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                    <svg
-                      className="w-5 h-5 text-blue-600"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      />
-                    </svg>
+                    <HiOutlineMail className="size-6 text-blue-600" />
                   </div>
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-gray-900 mb-1">
+                  <h3 className="text-sm font-semibold text-gray-900 mb-1">
                     Email Us
-                  </h4>
-                  <p className="text-sm text-gray-600">hello@yourcompany.com</p>
+                  </h3>
+                  <p className="text-sm text-gray-600">team@zentrolab.com</p>
                 </div>
               </div>
 
@@ -267,25 +238,13 @@ const Contact = () => {
               <div className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
                 <div className="flex-shrink-0">
                   <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-                    <svg
-                      className="w-5 h-5 text-green-600"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                      />
-                    </svg>
+                    <IoCallOutline className="size-6 text-green-600" />
                   </div>
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-gray-900 mb-1">
+                  <h3 className="text-sm font-semibold text-gray-900 mb-1">
                     Call Us
-                  </h4>
+                  </h3>
                   <p className="text-sm text-gray-600">+1 (555) 123-4567</p>
                 </div>
               </div>
@@ -294,25 +253,13 @@ const Contact = () => {
               <div className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg sm:col-span-2 lg:col-span-1">
                 <div className="flex-shrink-0">
                   <div className="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center">
-                    <svg
-                      className="w-5 h-5 text-yellow-600"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
+                    <FaRegClock className="size-5 text-yellow-600" />
                   </div>
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-gray-900 mb-1">
+                  <h3 className="text-sm font-semibold text-gray-900 mb-1">
                     Response Time
-                  </h4>
+                  </h3>
                   <p className="text-sm text-gray-600">
                     We typically respond within 24 hours
                   </p>
@@ -321,10 +268,10 @@ const Contact = () => {
             </div>
 
             {/* Alternative CTA Buttons */}
-            <div className="bg-gray-50 rounded-lg p-6">
-              <h4 className="text-lg font-semibold text-gray-900 mb-4">
+            <div className="bg-quaternary rounded-lg p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">
                 Prefer other ways to connect?
-              </h4>
+              </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <button className="px-4 py-2 bg-white border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors duration-200 text-sm font-medium">
                   Let's Talk

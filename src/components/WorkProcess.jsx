@@ -38,7 +38,7 @@ const WorkProcess = () => {
           {WORK_PROCESS.map((item, index) => (
             <div
               key={index}
-              className="border border-black rounded-lg overflow-hidden"
+              className="border border-black rounded-lg shadow-lg overflow-hidden"
             >
               <button
                 onClick={() => toggleItem(index)}
