@@ -5,12 +5,12 @@ const Services = () => {
     <section id="services" className="pt-24 pb-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/*headline */}
-        <div className="flex flex-col md:flex-row gap-4 mb-12">
-          <div className="shrink-0 bg-secondary text-black rounded-md py-2 px-8">
-            <h2 className="text-2xl font-bold">What We Offer</h2>
+        <div className="flex flex-col md:flex-row gap-4 mb-8 md:mb-12">
+          <div className="shrink-0 bg-secondary text-black rounded-md py-2 px-4 md:px-8 text-center md:text-left">
+            <h2 className="text-xl md:text-2xl font-bold">What We Offer</h2>
           </div>
           <div className="md:w-2/3">
-            <p className="text-primary md:w-2/3">
+            <p className="text-primary text-sm md:text-base md:w-2/3 text-center md:text-left">
               We offer a comprehensive suite of digital solutions tailored to
               help your business thrive in the online world.
             </p>
