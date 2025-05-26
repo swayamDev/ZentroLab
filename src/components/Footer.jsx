@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { LINKS, SOCIAL_LINKS } from "../constants/navLinks";
+import { motion } from "framer-motion";
+import { footerSlide } from "../constants/motion";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -31,7 +33,13 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-blue-700 text-white py-12">
+    <motion.footer
+      variants={footerSlide}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.1 }}
+      className="bg-blue-700 text-white py-12"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row gap-10">
           <div className="md:w-1/3">
@@ -128,7 +136,7 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 

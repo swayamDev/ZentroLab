@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { TESTIMONIALS } from "../constants/testimonials";
 import { FaQuoteLeft } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { slideInLeft, textReveal } from "../constants/motion";
 
 const Testimonials = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -39,16 +41,28 @@ const Testimonials = () => {
     <section id="testimonials" className="pt-24 pb-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row gap-4 mb-8 md:mb-12">
-          <div className="shrink-0 bg-secondary text-black rounded-md py-2 px-4 md:px-8 text-center md:text-left">
+          <motion.div
+            variants={slideInLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.5 }}
+            className="shrink-0 bg-secondary text-black rounded-md py-2 px-4 md:px-8 text-center md:text-left"
+          >
             <h2 className="text-xl md:text-2xl font-bold">
               What Our Clients Say
             </h2>
-          </div>
+          </motion.div>
           <div className="md:w-2/3">
-            <p className="text-primary text-sm md:text-base md:w-2/3 text-center md:text-left">
+            <motion.p
+              variants={textReveal}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.5 }}
+              className="text-primary text-sm md:text-base md:w-2/3 text-center md:text-left"
+            >
               Hear from the businesses and startups that have trusted us with
               their digital transformation.
-            </p>
+            </motion.p>
           </div>
         </div>
 

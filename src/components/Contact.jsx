@@ -3,6 +3,14 @@ import formImg from "../assets/form.webp";
 import { HiOutlineMail } from "react-icons/hi";
 import { IoCallOutline } from "react-icons/io5";
 import { FaRegClock } from "react-icons/fa";
+import { motion } from "framer-motion";
+import {
+  cardItem,
+  slideInLeft,
+  slideInUp,
+  staggerContainer,
+  textReveal,
+} from "../constants/motion";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -61,21 +69,39 @@ const Contact = () => {
     <section id="contact" className="pt-24 pb-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row gap-4 mb-8 md:mb-12">
-          <div className="shrink-0 bg-secondary text-black rounded-md py-2 px-4 md:px-8 text-center md:text-left">
+          <motion.div
+            variants={slideInLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.5 }}
+            className="shrink-0 bg-secondary text-black rounded-md py-2 px-4 md:px-8 text-center md:text-left"
+          >
             <h2 className="text-xl md:text-2xl font-bold">
               Let's Work Together
             </h2>
-          </div>
+          </motion.div>
           <div className="md:w-2/3">
-            <p className="text-primary text-sm md:text-base md:w-2/3 text-center md:text-left">
+            <motion.p
+              variants={textReveal}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.5 }}
+              className="text-primary text-sm md:text-base md:w-2/3 text-center md:text-left"
+            >
               Ready to start your next project or have a question? We'd love to
               hear from you.
-            </p>
+            </motion.p>
           </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="bg-white rounded-lg shadow-lg p-6 md:p-8 border border-black">
+          <motion.div
+            variants={slideInLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.3 }}
+            className="bg-white rounded-lg shadow-lg p-6 md:p-8 border border-black"
+          >
             <div className="space-y-6">
               <div>
                 <label
@@ -216,11 +242,15 @@ const Contact = () => {
                 </div>
               )}
             </div>
-          </div>
+          </motion.div>
 
           <div className="space-y-8">
             <div className="relative overflow-hidden rounded-lg shadow-lg bg-blue-400">
-              <img
+              <motion.img
+                variants={slideInUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.3 }}
                 loading="lazy"
                 src={formImg}
                 alt="Team collaboration and discussion"
@@ -228,8 +258,17 @@ const Contact = () => {
               />
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
-              <div className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
+            <motion.div
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.3 }}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6"
+            >
+              <motion.div
+                variants={cardItem}
+                className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg"
+              >
                 <div className="flex-shrink-0">
                   <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
                     <HiOutlineMail className="size-6 text-blue-600" />
@@ -241,9 +280,12 @@ const Contact = () => {
                   </h3>
                   <p className="text-sm text-gray-600">team@zentrolab.com</p>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
+              <motion.div
+                variants={cardItem}
+                className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg"
+              >
                 <div className="flex-shrink-0">
                   <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
                     <IoCallOutline className="size-6 text-green-600" />
@@ -255,9 +297,12 @@ const Contact = () => {
                   </h3>
                   <p className="text-sm text-gray-600">+1 (555) 123-4567</p>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg sm:col-span-2 lg:col-span-1">
+              <motion.div
+                variants={cardItem}
+                className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg sm:col-span-2 lg:col-span-1"
+              >
                 <div className="flex-shrink-0">
                   <div className="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center">
                     <FaRegClock className="size-5 text-yellow-600" />
@@ -271,10 +316,16 @@ const Contact = () => {
                     We typically respond within 24 hours
                   </p>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
-            <div className="bg-quaternary rounded-lg p-6">
+            <motion.div
+              variants={slideInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.3 }}
+              className="bg-quaternary rounded-lg p-6"
+            >
               <h3 className="text-lg font-semibold text-gray-900 mb-4">
                 Prefer other ways to connect?
               </h3>
@@ -286,7 +337,7 @@ const Contact = () => {
                   Get in Touch
                 </button>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
