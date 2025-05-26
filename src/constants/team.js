@@ -1,9 +1,9 @@
-import member1 from "../assets/avatar1.jpg";
-import member2 from "../assets/avatar2.jpg";
-import member3 from "../assets/avatar3.jpg";
-import member4 from "../assets/avatar4.jpg";
-import member5 from "../assets/avatar5.jpg";
-import member6 from "../assets/avatar6.jpg";
+import member1 from "../assets/avatar1.webp";
+import member2 from "../assets/avatar2.webp";
+import member3 from "../assets/avatar3.webp";
+import member4 from "../assets/avatar4.webp";
+import member5 from "../assets/avatar5.webp";
+import member6 from "../assets/avatar6.webp";
 
 export const TEAM_MEMBERS = [
   {
@@ -12,7 +12,8 @@ export const TEAM_MEMBERS = [
     bio: "Leads the visual direction and branding strategy with 10+ years of experience in design and storytelling.",
     src: member1,
     alt: "Aarav Mehta - Creative Director",
-    linkedin: "https://www.linkedin.com/in/aarav-mehta",
+    linkedin: "#",
+    label: "View on LinkedIn",
   },
   {
     name: "Riya Sharma",
@@ -20,7 +21,8 @@ export const TEAM_MEMBERS = [
     bio: "Expert in full-stack development, Riya turns bold ideas into scalable, high-performance products.",
     src: member2,
     alt: "Riya Sharma - Lead Developer",
-    linkedin: "https://www.linkedin.com/in/riya-sharma",
+    linkedin: "#",
+    label: "View on LinkedIn",
   },
   {
     name: "Karan Patel",
@@ -28,7 +30,8 @@ export const TEAM_MEMBERS = [
     bio: "Keeps everything on track with agile processes, ensuring smooth collaboration and on-time delivery.",
     src: member3,
     alt: "Karan Patel - Project Manager",
-    linkedin: "https://www.linkedin.com/in/karan-patel",
+    linkedin: "#",
+    label: "View on LinkedIn",
   },
   {
     name: "Anika Rao",
@@ -36,7 +39,8 @@ export const TEAM_MEMBERS = [
     bio: "Crafts intuitive user experiences that align design with business goals and user behavior.",
     src: member4,
     alt: "Anika Rao - UX/UI Designer",
-    linkedin: "https://www.linkedin.com/in/anika-rao",
+    linkedin: "#",
+    label: "View on LinkedIn",
   },
   {
     name: "Nikhil Verma",
@@ -44,7 +48,8 @@ export const TEAM_MEMBERS = [
     bio: "Connects data with creativity to drive traffic, leads, and conversions across digital channels.",
     src: member5,
     alt: "Nikhil Verma - Marketing Strategist",
-    linkedin: "https://www.linkedin.com/in/nikhil-verma",
+    linkedin: "#",
+    label: "View on LinkedIn",
   },
   {
     name: "Sneha Joshi",
@@ -52,7 +57,8 @@ export const TEAM_MEMBERS = [
     bio: "Creates compelling content that captures attention and communicates brand voice across all platforms.",
     src: member6,
     alt: "Sneha Joshi - Content Specialist",
-    linkedin: "https://www.linkedin.com/in/sneha-joshi",
+    linkedin: "#",
+    label: "View on LinkedIn",
   },
   {
     name: "Arjun Singh",
@@ -60,7 +66,8 @@ export const TEAM_MEMBERS = [
     bio: "Specializes in server-side architecture and database optimization to ensure robust and scalable applications.",
     src: member1,
     alt: "Arjun Singh - Backend Developer",
-    linkedin: "https://www.linkedin.com/in/arjun-singh",
+    linkedin: "#",
+    label: "View on LinkedIn",
   },
   {
     name: "Priya Gupta",
@@ -68,7 +75,8 @@ export const TEAM_MEMBERS = [
     bio: "Optimizes websites for search engines and implements data-driven strategies to improve organic visibility.",
     src: member2,
     alt: "Priya Gupta - SEO Specialist",
-    linkedin: "https://www.linkedin.com/in/priya-gupta",
+    linkedin: "#",
+    label: "View on LinkedIn",
   },
   {
     name: "Rohit Kumar",
@@ -76,7 +84,8 @@ export const TEAM_MEMBERS = [
     bio: "Builds responsive and interactive user interfaces using modern frameworks and cutting-edge technologies.",
     src: member3,
     alt: "Rohit Kumar - Frontend Developer",
-    linkedin: "https://www.linkedin.com/in/rohit-kumar",
+    linkedin: "#",
+    label: "View on LinkedIn",
   },
   {
     name: "Kavya Nair",
@@ -84,7 +93,8 @@ export const TEAM_MEMBERS = [
     bio: "Manages brand presence across social platforms and creates engaging campaigns that drive community growth.",
     src: member4,
     alt: "Kavya Nair - Social Media Manager",
-    linkedin: "https://www.linkedin.com/in/kavya-nair",
+    linkedin: "#",
+    label: "View on LinkedIn",
   },
   {
     name: "Amit Agarwal",
@@ -92,7 +102,8 @@ export const TEAM_MEMBERS = [
     bio: "Streamlines deployment processes and maintains cloud infrastructure for optimal performance and reliability.",
     src: member5,
     alt: "Amit Agarwal - DevOps Engineer",
-    linkedin: "https://www.linkedin.com/in/amit-agarwal",
+    linkedin: "#",
+    label: "View on LinkedIn",
   },
   {
     name: "Neha Bansal",
@@ -100,7 +111,8 @@ export const TEAM_MEMBERS = [
     bio: "Creates visually stunning graphics and illustrations that enhance brand identity and user engagement.",
     src: member6,
     alt: "Neha Bansal - Graphic Designer",
-    linkedin: "https://www.linkedin.com/in/neha-bansal",
+    linkedin: "#",
+    label: "View on LinkedIn",
   },
   {
     name: "Vikram Reddy",
@@ -108,7 +120,8 @@ export const TEAM_MEMBERS = [
     bio: "Ensures product quality through comprehensive testing and maintains high standards across all deliverables.",
     src: member1,
     alt: "Vikram Reddy - QA Engineer",
-    linkedin: "https://www.linkedin.com/in/vikram-reddy",
+    linkedin: "#",
+    label: "View on LinkedIn",
   },
   {
     name: "Ananya Iyer",
@@ -116,6 +129,7 @@ export const TEAM_MEMBERS = [
     bio: "Bridges the gap between business requirements and technical solutions to deliver optimal project outcomes.",
     src: member2,
     alt: "Ananya Iyer - Business Analyst",
-    linkedin: "https://www.linkedin.com/in/ananya-iyer",
+    linkedin: "#",
+    label: "View on LinkedIn",
   },
 ];

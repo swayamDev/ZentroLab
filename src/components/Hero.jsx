@@ -3,8 +3,8 @@ import Carousel from "./Carousel";
 
 const Hero = () => {
   return (
-    <section id="about" className="bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-24">
+    <section id="home" className="bg-white pt-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-24">
         <div className="flex flex-col md:flex-row items-center gap-6">
           <div className="md:w-1/2">
             <h1 className="text-4xl font-bold text-primary mb-5">
@@ -25,7 +25,12 @@ const Hero = () => {
             </button>
           </div>
           <div className="md:w-1/2 order-first md:order-last">
-            <img src={mainImg} alt="" className="w-full h-auto" />
+            <img
+              rel="preload"
+              src={mainImg}
+              alt="Modern workspace"
+              className="w-full h-auto"
+            />
           </div>
         </div>
         <div>

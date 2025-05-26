@@ -4,7 +4,6 @@ const Services = () => {
   return (
     <section id="services" className="pt-24 pb-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/*headline */}
         <div className="flex flex-col md:flex-row gap-4 mb-8 md:mb-12">
           <div className="shrink-0 bg-secondary text-black rounded-md py-2 px-4 md:px-8 text-center md:text-left">
             <h2 className="text-xl md:text-2xl font-bold">What We Offer</h2>
@@ -17,7 +16,6 @@ const Services = () => {
           </div>
         </div>
 
-        {/*cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {SERVICES.map((services, index) => (
             <div
@@ -37,6 +35,7 @@ const Services = () => {
 
               <div className="md:w-1/2 order-first md:order-last">
                 <img
+                  loading="lazy"
                   src={services.src}
                   alt={services.alt}
                   className="w-full object-cover rounded-md mb-4"

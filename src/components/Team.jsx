@@ -9,7 +9,6 @@ const Team = () => {
   return (
     <section id="team" className="pt-24 pb-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/*headline */}
         <div className="flex flex-col md:flex-row gap-4 mb-8 md:mb-12">
           <div className="shrink-0 bg-secondary text-black rounded-md py-2 px-4 md:px-8 text-center md:text-left">
             <h2 className="text-xl md:text-2xl font-bold">Meet the Team</h2>
@@ -22,7 +21,6 @@ const Team = () => {
           </div>
         </div>
 
-        {/*cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {displayedMembers.map((member, index) => (
             <div
@@ -32,6 +30,7 @@ const Team = () => {
               <div className="relative mb-4">
                 <div className="flex flex-col sm:flex-row sm:items-end items-start gap-4 justify-center">
                   <img
+                    loading="lazy"
                     src={member.src}
                     alt={member.alt}
                     className="rounded-full size-32 object-cover"
@@ -44,6 +43,7 @@ const Team = () => {
                     href={member.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={member.label}
                     className="absolute top-0 right-0 bg-black hover:bg-primary hover:text-black text-white p-2 rounded-full cursor-pointer transition-all duration-300"
                   >
                     <FaLinkedinIn className="size-5" />
@@ -58,7 +58,6 @@ const Team = () => {
           ))}
         </div>
 
-        {/* Show More/Show Less Button */}
         {TEAM_MEMBERS.length > 6 && (
           <div className="flex justify-center mt-12">
             <button

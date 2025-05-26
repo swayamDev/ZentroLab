@@ -1,4 +1,4 @@
-import { PARTNER_LOGOS } from "../constants/main";
+import { PARTNER_LOGOS } from "../constants/navLinks";
 
 const Carousel = () => {
   const duplicatedLogos = [...PARTNER_LOGOS, ...PARTNER_LOGOS];

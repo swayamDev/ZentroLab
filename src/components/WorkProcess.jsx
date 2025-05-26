@@ -18,7 +18,6 @@ const WorkProcess = () => {
   return (
     <section className="pt-12 pb-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/*headline */}
         <div className="flex flex-col md:flex-row gap-4 mb-8 md:mb-12">
           <div className="shrink-0 bg-secondary text-black rounded-md py-2 px-4 md:px-8 text-center md:text-left">
             <h2 className="text-xl md:text-2xl font-bold">
@@ -33,7 +32,6 @@ const WorkProcess = () => {
           </div>
         </div>
 
-        {/* card */}
         <div className="space-y-4">
           {WORK_PROCESS.map((item, index) => (
             <div

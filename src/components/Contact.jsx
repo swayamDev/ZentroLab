@@ -1,5 +1,5 @@
 import { useState } from "react";
-import formImg from "../assets/form.png";
+import formImg from "../assets/form.webp";
 import { HiOutlineMail } from "react-icons/hi";
 import { IoCallOutline } from "react-icons/io5";
 import { FaRegClock } from "react-icons/fa";
@@ -28,7 +28,6 @@ const Contact = () => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    // Validate required fields
     if (
       !formData.name ||
       !formData.email ||
@@ -40,7 +39,6 @@ const Contact = () => {
       return;
     }
 
-    // Simulate form submission
     try {
       await new Promise((resolve) => setTimeout(resolve, 1500));
       setSubmitStatus("success");
@@ -62,7 +60,6 @@ const Contact = () => {
   return (
     <section id="contact" className="pt-24 pb-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Headline */}
         <div className="flex flex-col md:flex-row gap-4 mb-8 md:mb-12">
           <div className="shrink-0 bg-secondary text-black rounded-md py-2 px-4 md:px-8 text-center md:text-left">
             <h2 className="text-xl md:text-2xl font-bold">
@@ -78,17 +75,20 @@ const Contact = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
           <div className="bg-white rounded-lg shadow-lg p-6 md:p-8 border border-black">
             <div className="space-y-6">
-              {/* Name Field */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor="contact-name"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Name *
                 </label>
                 <input
                   type="text"
+                  id="contact-name"
                   name="name"
+                  autoComplete="name"
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Your Full Name"
@@ -96,14 +96,18 @@ const Contact = () => {
                 />
               </div>
 
-              {/* Email Field */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor="contact-email"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Email *
                 </label>
                 <input
                   type="email"
+                  id="contact-email"
                   name="email"
+                  autoComplete="email"
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Your Email Address"
@@ -111,14 +115,18 @@ const Contact = () => {
                 />
               </div>
 
-              {/* Phone Field */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor="contact-phone"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Phone (optional)
                 </label>
                 <input
                   type="tel"
+                  id="contact-phone"
                   name="phone"
+                  autoComplete="tel"
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="Phone Number (optional)"
@@ -126,13 +134,16 @@ const Contact = () => {
                 />
               </div>
 
-              {/* Subject Field */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor="contact-subject"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Subject *
                 </label>
                 <input
                   type="text"
+                  id="contact-subject"
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
@@ -141,12 +152,15 @@ const Contact = () => {
                 />
               </div>
 
-              {/* Message Field */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor="contact-message"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Message *
                 </label>
                 <textarea
+                  id="contact-message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
@@ -156,7 +170,6 @@ const Contact = () => {
                 />
               </div>
 
-              {/* Submit Button */}
               <button
                 onClick={handleSubmit}
                 disabled={isSubmitting}
@@ -176,7 +189,6 @@ const Contact = () => {
                 )}
               </button>
 
-              {/* Status Messages */}
               {submitStatus === "success" && (
                 <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
                   <p className="text-green-700 text-sm font-medium">
@@ -206,20 +218,17 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Contact Image/Info */}
           <div className="space-y-8">
-            {/* Hero Image */}
             <div className="relative overflow-hidden rounded-lg shadow-lg bg-blue-400">
               <img
+                loading="lazy"
                 src={formImg}
                 alt="Team collaboration and discussion"
                 className="w-full h-64 md:h-80 object-cover"
               />
             </div>
 
-            {/* Contact Info */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
-              {/* Email */}
               <div className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
                 <div className="flex-shrink-0">
                   <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
@@ -234,7 +243,6 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Phone */}
               <div className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
                 <div className="flex-shrink-0">
                   <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
@@ -249,7 +257,6 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Response Time */}
               <div className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg sm:col-span-2 lg:col-span-1">
                 <div className="flex-shrink-0">
                   <div className="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center">
@@ -267,7 +274,6 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Alternative CTA Buttons */}
             <div className="bg-quaternary rounded-lg p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">
                 Prefer other ways to connect?

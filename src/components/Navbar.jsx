@@ -1,7 +1,8 @@
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
 import { useState, useEffect } from "react";
-import { LINKS } from "../constants/main";
+import { LINKS } from "../constants/navLinks";
+import logo from "../assets/logo.webp";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,23 +10,21 @@ const Navbar = () => {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  // Set active link based on current URL path
   useEffect(() => {
     const path = window.location.hash || window.location.pathname;
     setActiveLink(path);
   }, []);
 
   return (
-    <nav>
+    <nav className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div>
-            <a href="" className="text-xl font-bold">
-              ZentroLab
+            <a href="/" className="text-xl font-bold">
+              <img src={logo} alt="logo" className="h-15" />
             </a>
           </div>
 
-          {/* Desktop Nav */}
           <div className="hidden lg:flex items-center justify-center">
             <ul className="flex space-x-8 items-center">
               {LINKS.map((link, index) => (
@@ -56,7 +55,6 @@ const Navbar = () => {
             </ul>
           </div>
 
-          {/* Mobile Nav Toggle */}
           <div className="lg:hidden flex items-center">
             <button
               aria-label="Toggle Menu"
@@ -72,7 +70,6 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
         {isOpen && (
           <ul className="lg:hidden absolute top-16 left-0 w-full bg-white shadow-md flex flex-col items-center gap-4 py-4 z-10">
             {LINKS.map((link, index) => (

@@ -1,11 +1,5 @@
 import { useState } from "react";
-import { LINKS } from "../constants/main";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaLinkedin,
-  FaTwitter,
-} from "react-icons/fa6";
+import { LINKS, SOCIAL_LINKS } from "../constants/navLinks";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -40,7 +34,6 @@ const Footer = () => {
     <footer className="bg-blue-700 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row gap-10">
-          {/* Left Side: Links */}
           <div className="md:w-1/3">
             <h3 className="text-xl font-bold mb-4 text-turmeric">
               Quick Links
@@ -58,7 +51,6 @@ const Footer = () => {
             </nav>
           </div>
 
-          {/* Right Side: Newsletter + Socials */}
           <div className="space-y-6">
             <div>
               <h3 className="text-xl font-bold mb-3 text-turmeric">
@@ -72,6 +64,7 @@ const Footer = () => {
                 <div className="flex flex-col sm:flex-row gap-3">
                   <input
                     type="email"
+                    id="newsletter-email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email"
@@ -108,44 +101,27 @@ const Footer = () => {
                 )}
               </form>
             </div>
-
             <div>
               <h4 className="text-white/80 mb-3">Follow Us</h4>
               <div className="flex gap-4">
-                <a
-                  href="#"
-                  className="text-white/80 hover:text-turmeric transition-colors p-2 bg-white/10 rounded-full hover:bg-white/20"
-                  aria-label="Facebook"
-                >
-                  <FaFacebookF size={18} />
-                </a>
-                <a
-                  href="#"
-                  className="text-white/80 hover:text-turmeric transition-colors p-2 bg-white/10 rounded-full hover:bg-white/20"
-                  aria-label="Twitter"
-                >
-                  <FaTwitter size={18} />
-                </a>
-                <a
-                  href="#"
-                  className="text-white/80 hover:text-turmeric transition-colors p-2 bg-white/10 rounded-full hover:bg-white/20"
-                  aria-label="Instagram"
-                >
-                  <FaInstagram size={18} />
-                </a>
-                <a
-                  href="#"
-                  className="text-white/80 hover:text-turmeric transition-colors p-2 bg-white/10 rounded-full hover:bg-white/20"
-                  aria-label="LinkedIn"
-                >
-                  <FaLinkedin size={18} />
-                </a>
+                {SOCIAL_LINKS.map(
+                  ({ name, icon: IconComponent, href }, index) => (
+                    <a
+                      key={index}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white/80 hover:text-turmeric transition-colors p-2 bg-white/10 rounded-full hover:bg-white/20"
+                      aria-label={name}
+                    >
+                      <IconComponent size={18} />
+                    </a>
+                  )
+                )}
               </div>
             </div>
           </div>
         </div>
-
-        {/* Centered Copyright */}
         <div className="border-t border-white/20 mt-10 pt-6 text-center">
           <p className="text-white/70 text-sm">
             © {new Date().getFullYear()} ZentroLab. All rights reserved.

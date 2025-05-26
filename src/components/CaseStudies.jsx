@@ -5,7 +5,6 @@ const CaseStudies = () => {
   return (
     <section id="use-cases" className="pt-24 pb-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/*headline */}
         <div className="flex flex-col md:flex-row gap-4 mb-8 md:mb-12">
           <div className="shrink-0 bg-secondary text-black rounded-md py-2 px-4 md:px-8 text-center md:text-left">
             <h2 className="text-xl md:text-2xl font-bold">Case Studies</h2>
@@ -18,7 +17,6 @@ const CaseStudies = () => {
           </div>
         </div>
 
-        {/*cards */}
         <div className="bg-black text-white p-8 rounded-md">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {CASE_STUDIES.map((caseItem, index) => (
@@ -31,7 +29,9 @@ const CaseStudies = () => {
                 </h3>
                 <p className="mb-4">{caseItem.description}</p>
                 <a
-                  href="#"
+                  href={caseItem.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-secondary flex items-center hover:underline"
                 >
                   Explore More <FaExternalLinkAlt className="ml-2" />

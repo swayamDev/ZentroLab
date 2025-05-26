@@ -11,7 +11,7 @@ import WorkProcess from "./components/WorkProcess";
 
 const App = () => {
   return (
-    <main>
+    <>
       <Navbar />
       <Hero />
       <Services />
@@ -22,7 +22,7 @@ const App = () => {
       <Testimonials />
       <Contact />
       <Footer />
-    </main>
+    </>
   );
 };
 

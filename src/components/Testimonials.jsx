@@ -6,7 +6,6 @@ const Testimonials = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Check if mobile screen
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
@@ -17,28 +16,17 @@ const Testimonials = () => {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  const testimonialsPerSlide = isMobile ? 1 : 3; // Show 1 on mobile, 3 on desktop
+  const testimonialsPerSlide = isMobile ? 1 : 3;
   const totalSlides = TESTIMONIALS.length;
 
-  // Auto-slide functionality
   useEffect(() => {
     const maxSlide = isMobile ? totalSlides - 1 : totalSlides - 3;
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % (maxSlide + 1));
-    }, 5000); // Change slide every 5 seconds
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [totalSlides, isMobile]);
-
-  // const getCurrentTestimonials = () => {
-  //   const testimonials = [];
-  //   const count = Math.min(testimonialsPerSlide, TESTIMONIALS.length);
-  //   for (let i = 0; i < count; i++) {
-  //     const index = (currentSlide + i) % TESTIMONIALS.length;
-  //     testimonials.push(TESTIMONIALS[index]);
-  //   }
-  //   return testimonials;
-  // };
 
   const goToSlide = (slideIndex) => {
     const maxSlide = isMobile ? totalSlides - 1 : totalSlides - 3;
@@ -50,7 +38,6 @@ const Testimonials = () => {
   return (
     <section id="testimonials" className="pt-24 pb-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/*headline */}
         <div className="flex flex-col md:flex-row gap-4 mb-8 md:mb-12">
           <div className="shrink-0 bg-secondary text-black rounded-md py-2 px-4 md:px-8 text-center md:text-left">
             <h2 className="text-xl md:text-2xl font-bold">
@@ -65,7 +52,6 @@ const Testimonials = () => {
           </div>
         </div>
 
-        {/*slider */}
         <div className="relative mb-12">
           <div className="overflow-hidden">
             <div
@@ -104,7 +90,6 @@ const Testimonials = () => {
             </div>
           </div>
 
-          {/* Dot Navigation */}
           {totalSlides > (isMobile ? 1 : 3) && (
             <div className="absolute mt-6 md:mt-8 left-1/2 transform -translate-x-1/2 flex items-center space-x-2 md:space-x-3">
               {Array.from({
